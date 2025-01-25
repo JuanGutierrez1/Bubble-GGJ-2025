@@ -54,6 +54,6 @@ jobs:
         env:
           BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}
           CHANNEL: html5
-          ITCH_GAME: tarot-game
-          ITCH_USER: flaquero
+          ITCH_GAME: knife-the-bubbles
+          ITCH_USER: juansabee
           PACKAGE: build/WebGL
