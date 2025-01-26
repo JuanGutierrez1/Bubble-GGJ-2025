@@ -15,6 +15,8 @@ public class Launcher : MonoBehaviour
         _audioManager = audioManager;
     }
 
+    public int threeStars, twoStars, oneStar;
+
     private Camera mainCamera;
     private Vector3 mousePos;
 
