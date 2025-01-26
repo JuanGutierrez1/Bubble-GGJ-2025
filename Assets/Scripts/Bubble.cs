@@ -6,6 +6,15 @@ public class Bubble : MonoBehaviour
 {
     private BubbleManager _bubbleManager;
 
+    [SerializeField]
+    private Animator animator;
+
+    [SerializeField]
+    private Collider2D collider;
+
+    [SerializeField]
+    private ParticleSystem particles;
+
     [Inject]
     public void Constructor(BubbleManager bubbleManager)
     {
@@ -25,11 +34,12 @@ public class Bubble : MonoBehaviour
         sequence.Append(transform.DOLocalMoveY(initialYPosition, 0.6f).SetEase(Ease.InQuad));
     }
 
-    private void OnDestroy()
+    public void ExplodeBubble()
     {
-        if (gameObject.scene.isLoaded) //Was Deleted
-        {
-            _bubbleManager.RemoveBubble();
-        }
+        animator.SetTrigger("Explode");
+
+        _bubbleManager.RemoveBubble();
+        collider.enabled = false;
+        particles.Stop();
     }
 }

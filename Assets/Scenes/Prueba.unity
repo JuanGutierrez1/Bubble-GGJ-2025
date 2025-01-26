@@ -2662,6 +2662,22 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8241656634427904161, guid: cf67f14c78d9bbd4d8fea8971cff4e7c, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8241656634427904161, guid: cf67f14c78d9bbd4d8fea8971cff4e7c, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8241656634427904161, guid: cf67f14c78d9bbd4d8fea8971cff4e7c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8241656634427904161, guid: cf67f14c78d9bbd4d8fea8971cff4e7c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9165448399666362266, guid: cf67f14c78d9bbd4d8fea8971cff4e7c, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2694,6 +2710,18 @@ PrefabInstance:
     - target: {fileID: 2045875814906015367, guid: b029d1fb288c5384db4ba65904594eab, type: 3}
       propertyPath: m_Name
       value: Bubble
+      objectReference: {fileID: 0}
+    - target: {fileID: 4064969708394234101, guid: b029d1fb288c5384db4ba65904594eab, type: 3}
+      propertyPath: m_Size.x
+      value: 2.8508327
+      objectReference: {fileID: 0}
+    - target: {fileID: 4064969708394234101, guid: b029d1fb288c5384db4ba65904594eab, type: 3}
+      propertyPath: m_Size.y
+      value: 3.2100003
+      objectReference: {fileID: 0}
+    - target: {fileID: 4064969708394234101, guid: b029d1fb288c5384db4ba65904594eab, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4980002668939655994, guid: b029d1fb288c5384db4ba65904594eab, type: 3}
       propertyPath: m_Enabled

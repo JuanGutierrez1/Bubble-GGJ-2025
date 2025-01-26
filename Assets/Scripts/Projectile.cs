@@ -82,7 +82,7 @@ public class Projectile : MonoBehaviour
         if (collision.CompareTag("Bubble"))
         {
             _bubblePop.Play();
-            Destroy(collision.gameObject);
+            collision.GetComponent<Bubble>().ExplodeBubble();
         }
     }
 }
