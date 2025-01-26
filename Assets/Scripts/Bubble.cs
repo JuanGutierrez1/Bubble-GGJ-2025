@@ -17,9 +17,12 @@ public class Bubble : MonoBehaviour
         _bubbleManager.AddBubble();
 
         Sequence sequence = DOTween.Sequence();
-        //sequence.Append()
-
-        transform.DOLocalMoveY(transform.localPosition.y + 0.3f, 3.5f).SetEase(Ease.InOutQuart).SetLoops(-1, LoopType.Yoyo);
+        sequence.SetLoops(-1, LoopType.Restart);
+        float initialYPosition = transform.localPosition.y;
+        sequence.Append(transform.DOLocalMoveY(initialYPosition + 0.15f, 0.6f).SetEase(Ease.OutQuad));
+        sequence.Append(transform.DOLocalMoveY(initialYPosition, 0.6f).SetEase(Ease.InQuad));
+        sequence.Append(transform.DOLocalMoveY(initialYPosition - 0.15f, 0.6f).SetEase(Ease.OutQuad));
+        sequence.Append(transform.DOLocalMoveY(initialYPosition, 0.6f).SetEase(Ease.InQuad));
     }
 
     private void OnDestroy()
