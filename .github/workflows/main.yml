@@ -48,7 +48,7 @@ jobs:
           targetPlatform: WebGL
           allowDirtyBuild: true
       - name: Publish to Itch
-      uses: manleydev/butler-publish-itchio-action@master
+        uses: manleydev/butler-publish-itchio-action@master
         env:
           BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}
           CHANNEL: html5
