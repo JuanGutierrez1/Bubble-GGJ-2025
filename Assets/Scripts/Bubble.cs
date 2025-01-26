@@ -1,5 +1,6 @@
 using UnityEngine;
 using Zenject;
+using DG.Tweening;
 
 public class Bubble : MonoBehaviour
 {
@@ -14,6 +15,11 @@ public class Bubble : MonoBehaviour
     private void Start()
     {
         _bubbleManager.AddBubble();
+
+        Sequence sequence = DOTween.Sequence();
+        //sequence.Append()
+
+        transform.DOLocalMoveY(transform.localPosition.y + 0.3f, 3.5f).SetEase(Ease.InOutQuart).SetLoops(-1, LoopType.Yoyo);
     }
 
     private void OnDestroy()

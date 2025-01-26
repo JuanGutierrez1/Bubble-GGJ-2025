@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class ProjectileDisplay : MonoBehaviour
 {
@@ -8,16 +9,11 @@ public class ProjectileDisplay : MonoBehaviour
     private Launcher launcher;
 
     [SerializeField]
-    private ProjectileContainerUI projectileContainer;
-
-    private List<ProjectileContainerUI> projectiles = new();
+    private TextMeshProUGUI projectileCounterTMP;
 
     private void Start()
     {
-        for (int i = 0; i < launcher.InitialProjectiles; i++)
-        {
-            projectiles.Add(Instantiate(projectileContainer, transform.position, Quaternion.Euler(0, 0, 90), transform));
-        }
+        projectileCounterTMP.text = launcher.InitialProjectiles.ToString();
     }
 
     private void OnEnable()
@@ -27,12 +23,6 @@ public class ProjectileDisplay : MonoBehaviour
 
     private void UpdateDisplay(int remainingProjectiles)
     {
-        for (int i = 0; i < launcher.InitialProjectiles; i++)
-        {
-            if (i >= launcher.Projectiles)
-            {
-                projectiles[i].DisableProjectile();
-            }
-        }
+        projectileCounterTMP.text = launcher.Projectiles.ToString();
     }
 }
