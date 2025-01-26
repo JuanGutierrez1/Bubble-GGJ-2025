@@ -2043,9 +2043,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8984163a56d2e484f963cec59a064efe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  threeStars: 2
+  twoStars: 1
+  oneStar: 0
   _launchSFX: {fileID: 1887351275}
   _infinite: 1
-  _initialProjectiles: 4
+  _initialProjectiles: 3
   _projectilePrefab: {fileID: 1950959252610295626, guid: 8ab3ef9d4df44914a9eadb34320f558a, type: 3}
   _speed: 1000
   _line: {fileID: 123528304}
@@ -2310,6 +2313,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6075952193647779700, guid: cf67f14c78d9bbd4d8fea8971cff4e7c, type: 3}
+      propertyPath: launcher
+      value: 
+      objectReference: {fileID: 1887351274}
+    - target: {fileID: 6075952193647779700, guid: cf67f14c78d9bbd4d8fea8971cff4e7c, type: 3}
       propertyPath: nextLevel
       value: 2
       objectReference: {fileID: 0}
@@ -2326,6 +2333,22 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7067284825788364645, guid: cf67f14c78d9bbd4d8fea8971cff4e7c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8241656634427904161, guid: cf67f14c78d9bbd4d8fea8971cff4e7c, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8241656634427904161, guid: cf67f14c78d9bbd4d8fea8971cff4e7c, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8241656634427904161, guid: cf67f14c78d9bbd4d8fea8971cff4e7c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8241656634427904161, guid: cf67f14c78d9bbd4d8fea8971cff4e7c, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
