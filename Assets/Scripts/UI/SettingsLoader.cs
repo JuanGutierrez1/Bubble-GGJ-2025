@@ -17,8 +17,8 @@ public class SettingsLoader : MonoBehaviour
         _settingsMenu.SetMasterVolume(masterVolume);
         _settingsMenu.SetMusicVolume(masterVolume);
         _settingsMenu.SetSFXVolume(masterVolume);
-        _masterSlider.value = masterVolume;
-        _musicSlider.value = musicVolume;
-        _sfxSlider.value = sfxVolume;
+        //_masterSlider.value = masterVolume;
+        //_musicSlider.value = musicVolume;
+        //_sfxSlider.value = sfxVolume;
     }
 }
