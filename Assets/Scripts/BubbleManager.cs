@@ -31,13 +31,13 @@ public class BubbleManager: IInitializable, IDisposable
         if(_bubbleCount <= 0)
         {
             OnLevelWin?.Invoke();
-            _finishedGameContainer.ShowContainer();
+            _finishedGameContainer.ShowContainer(true);
         }
     }
 
     private void Lose()
     {
-        _finishedGameContainer.ShowContainer();
+        _finishedGameContainer.ShowContainer(false);
     }
 
     public void Initialize()
