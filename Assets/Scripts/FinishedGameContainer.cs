@@ -12,7 +12,7 @@ public class FinishedGameContainer : MonoBehaviour
 
     public void ShowContainer()
     {
-        winContainer.DOMoveY(150, 0.5f).SetEase(Ease.OutCirc);
+        winContainer.DOLocalMoveY(0, 0.5f).SetEase(Ease.OutCirc);
     }
 
     public void LoadNextLevel()
