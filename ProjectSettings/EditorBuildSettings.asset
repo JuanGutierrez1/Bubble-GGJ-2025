@@ -29,5 +29,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level7.unity
     guid: 5917dab1b1cb211428c3a87a32740462
+  - enabled: 1
+    path: Assets/Scenes/VictoryScreen.unity
+    guid: d5dbe6b1fef38a24a8486e8979934cd7
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
