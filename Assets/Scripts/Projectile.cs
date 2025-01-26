@@ -3,6 +3,9 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     [SerializeField]
+    private AudioSource _bubblePop;
+
+    [SerializeField]
     private Rigidbody2D _rb2d;
 
     [SerializeField]
@@ -58,6 +61,12 @@ public class Projectile : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        if (collision.collider.CompareTag("Destroyer"))
+        {
+            Destroy(gameObject);
+            _launcher.ProjectileDestroyed();
+        }
+
         ChangeDirection(collision);
 
         _maxHits -= 1;
@@ -72,6 +81,7 @@ public class Projectile : MonoBehaviour
     {
         if (collision.CompareTag("Bubble"))
         {
+            _bubblePop.Play();
             Destroy(collision.gameObject);
         }
     }

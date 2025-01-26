@@ -14,6 +14,7 @@ public class AudioManager : MonoBehaviour
 
     public void PlaySFX(AudioClip audioClip, float volume = 1f, float pitch = 1f)
     {
+        print(enabled);
         if (_lastSFXAudioClip == audioClip) return;
         CancelInvoke();
 

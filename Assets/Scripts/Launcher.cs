@@ -1,11 +1,25 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Zenject;
 
 public class Launcher : MonoBehaviour
 {
+    private BubbleManager _bubbleManager;
+    private AudioManager _audioManager;
+
+    [Inject]
+    public void Constructor(BubbleManager bubbleManager, AudioManager audioManager)
+    {
+        _bubbleManager = bubbleManager;
+        _audioManager = audioManager;
+    }
+
     private Camera mainCamera;
     private Vector3 mousePos;
+
+    [SerializeField]
+    private AudioSource _launchSFX;
 
     [SerializeField]
     private bool _infinite;
@@ -29,7 +43,7 @@ public class Launcher : MonoBehaviour
     [SerializeField]
     private Rigidbody2D _projectilePrefab;
 
-    private Rigidbody2D _currentProjectile;
+    private Rigidbody2D _currentProjectile, _previousProjectile;
 
     [SerializeField]
     private float _speed;
@@ -47,10 +61,12 @@ public class Launcher : MonoBehaviour
     void Start()
     {
         SpawnProjectile();
+
     }
 
     private void SpawnProjectile()
     {
+        if (!enabled) return;
         _currentProjectile = Instantiate(_projectilePrefab, transform.position, Quaternion.identity, transform);
         _currentProjectile.transform.localRotation = Quaternion.Euler(0, 0, 90);
         _currentProjectile.transform.localPosition = new Vector2(0.72f, 0);
@@ -58,6 +74,11 @@ public class Launcher : MonoBehaviour
 
     public void ProjectileDestroyed()
     {
+        if(_projectiles <= 0 && !_infinite)
+        {
+            _bubbleManager.OnLevelLose?.Invoke();
+            return;
+        }
         SpawnProjectile();
     }
 
@@ -86,12 +107,36 @@ public class Launcher : MonoBehaviour
         onProjectileUsed?.Invoke(_projectiles);
         Projectile projectile = _currentProjectile.GetComponent<Projectile>();
 
+        _launchSFX.Play();
         _currentProjectile.bodyType = RigidbodyType2D.Dynamic;
 
         Vector2 direction = (mousePos - transform.position).normalized;
         _currentProjectile.AddForceAtPosition(direction * _speed, transform.position);
         projectile.Setup(this);
         _currentProjectile.transform.parent = null;
+        _previousProjectile = _currentProjectile;
         _currentProjectile = null;
+    }
+
+    private void DisableLauncher()
+    {
+        enabled = false;
+        _line.maxLineLength = 0;
+        if(_previousProjectile != null)
+        {
+            Destroy(_previousProjectile.gameObject);
+        }
+    }
+
+    private void OnEnable()
+    {
+        _bubbleManager.OnLevelWin += DisableLauncher;
+        _bubbleManager.OnLevelLose += DisableLauncher;
+    }
+
+    private void OnDisable()
+    {
+        _bubbleManager.OnLevelWin -= DisableLauncher;
+        _bubbleManager.OnLevelLose -= DisableLauncher;
     }
 }
