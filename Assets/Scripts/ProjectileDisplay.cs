@@ -13,7 +13,7 @@ public class ProjectileDisplay : MonoBehaviour
 
     private void Start()
     {
-        projectileCounterTMP.text = launcher.InitialProjectiles.ToString();
+        projectileCounterTMP.text = $"x{launcher.InitialProjectiles}";
     }
 
     private void OnEnable()
@@ -23,6 +23,6 @@ public class ProjectileDisplay : MonoBehaviour
 
     private void UpdateDisplay(int remainingProjectiles)
     {
-        projectileCounterTMP.text = launcher.Projectiles.ToString();
+        projectileCounterTMP.text = $"x{launcher.Projectiles}";
     }
 }

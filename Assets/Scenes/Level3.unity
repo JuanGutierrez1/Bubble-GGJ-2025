@@ -2059,7 +2059,7 @@ MonoBehaviour:
   twoStars: 1
   oneStar: 0
   _launchSFX: {fileID: 1887351275}
-  _infinite: 1
+  _infinite: 0
   _initialProjectiles: 3
   _projectilePrefab: {fileID: 1950959252610295626, guid: 8ab3ef9d4df44914a9eadb34320f558a, type: 3}
   _speed: 1000
