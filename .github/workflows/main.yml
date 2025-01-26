@@ -47,7 +47,6 @@ jobs:
         with:
           targetPlatform: WebGL
           allowDirtyBuild: true
-  
       - name: Publish to Itch
       - uses: manleydev/butler-publish-itchio-action@master
         env:
