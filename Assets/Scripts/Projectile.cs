@@ -2,8 +2,6 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    [SerializeField]
-    private AudioSource _bubblePop;
 
     [SerializeField]
     private Rigidbody2D _rb2d;
@@ -81,7 +79,6 @@ public class Projectile : MonoBehaviour
     {
         if (collision.CompareTag("Bubble"))
         {
-            _bubblePop.Play();
             collision.GetComponent<Bubble>().ExplodeBubble();
         }
     }

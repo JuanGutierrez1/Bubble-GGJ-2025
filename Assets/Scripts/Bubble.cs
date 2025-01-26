@@ -7,6 +7,9 @@ public class Bubble : MonoBehaviour
     private BubbleManager _bubbleManager;
 
     [SerializeField]
+    private AudioSource _bubblePop;
+
+    [SerializeField]
     private Animator animator;
 
     [SerializeField]
@@ -38,6 +41,7 @@ public class Bubble : MonoBehaviour
     {
         animator.SetTrigger("Explode");
 
+        _bubblePop.Play();
         _bubbleManager.RemoveBubble();
         collider.enabled = false;
         particles.Stop();
