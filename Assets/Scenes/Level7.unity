@@ -2728,6 +2728,10 @@ PrefabInstance:
       propertyPath: launcher
       value: 
       objectReference: {fileID: 1887351274}
+    - target: {fileID: 6075952193647779700, guid: cf67f14c78d9bbd4d8fea8971cff4e7c, type: 3}
+      propertyPath: nextLevel
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7067284825788364645, guid: cf67f14c78d9bbd4d8fea8971cff4e7c, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
